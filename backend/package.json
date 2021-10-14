@@ -4,7 +4,12 @@
   "description": "Buzz Solutions Coding challenge",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --watchAll"
+  },
+  "engines": {
+    "node": "16"
   },
   "repository": {
     "type": "git",
@@ -21,7 +26,13 @@
   },
   "homepage": "https://github.com/callezenwaka/buzz_challenge#readme",
   "dependencies": {
+    "axios": "^0.23.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5",
+    "supertest": "^6.1.6"
   }
 }

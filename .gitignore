@@ -43,6 +43,8 @@ jspm_packages/
 backend/node_modules/
 frontend/node_modules/
 
+backend/demo.js
+
 # TypeScript v1 declaration files
 typings/
 
