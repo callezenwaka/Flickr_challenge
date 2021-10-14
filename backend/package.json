@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Buzz Solutions Coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callezenwaka/buzz_challenge.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "callezenwaka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callezenwaka/buzz_challenge/issues"
+  },
+  "homepage": "https://github.com/callezenwaka/buzz_challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
