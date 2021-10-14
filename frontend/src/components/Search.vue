@@ -5,7 +5,7 @@
         <label for=""></label>
         <input class="search--input" type="search" name="keyword" id="keyword" v-model="keyword" placeholder="Search feed by tag. . .">
         <div class="button--controls" v-if="isValid">
-          <button class="search--button" type="submit">Search By Tag</button>
+          <button class="search--button button" type="submit">Search By Tag</button>
         </div>
       </form>
     </div>
