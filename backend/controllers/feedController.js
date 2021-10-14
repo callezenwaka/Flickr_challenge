@@ -34,7 +34,7 @@ exports.getAll = async (req, res, next) => {
  * Retrieve and return feeds by tag
  */
 exports.getByTag = async (req, res, next) => {
-	const API_URL = `https://api.flickr.com/services/feeds/photos_public.gne?tags=${req.params.tag}&tagmode=any&lang=en-us&format=json&nojsoncallback=1`;
+	const API_URL = `https://api.flickr.com/services/feeds/photos_public.gne?tags=${req.params.keyword}&tagmode=any&lang=en-us&format=json&nojsoncallback=1`;
     try {
         const { data } = await axios.get(API_URL);
         

@@ -16,7 +16,7 @@ router.get('/', feedController.getAll);
  * [START GET FEEDS BY TAG]
  * Retrieve feeds by Tag.
  */
-router.get('/:tag', feedController.getByTag);
+router.get('/:keyword', feedController.getByTag);
 // [END GET FEEDS BY TAG]
 
 module.exports = router;

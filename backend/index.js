@@ -32,10 +32,9 @@ app.get('/logs', (req, res) => {
 });
 
 // Set up port and start the server
-app.listen(process.env.PORT, process.env.IP);
-// app.listen( process.env.PORT, process.env.IP, () => {
-//   	console.log(`Server running at: ${process.env.IP} and listening on port: ${process.env.PORT} `);
-//     console.log('Press Ctrl+C to quit.');
-// });
+// app.listen(process.env.PORT, process.env.IP);
+app.listen( process.env.PORT, () => {
+	console.log(`Server listening on port: ${process.env.PORT} | Press Ctrl+C to quit.`);
+});
 
 module.exports = app;
