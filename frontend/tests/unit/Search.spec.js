@@ -1,28 +1,26 @@
 import Vuex from 'vuex';
-import { createLocalVue, mount } from '@vue/test-utils';
-import Search from '@/components/Search'
+import { shallowMount, createLocalVue } from '@vue/test-utils';
+import Search from '@/components/Search';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe("Keyword Search", () => {
-  let store;
+describe('Search.vue', () => {
+  let actions
+  let store
+
   beforeEach(() => {
-    store = new Vuex.Store();
-    store.dispatch = jest.fn();
-  });
+    actions = {
+      getFeedsByTag: jest.fn(),
+    }
+    store = new Vuex.Store({
+      actions
+    })
+  })
 
-  afterEach(() => { });
-
-  it("Trigger an action on button click", async () => {
-    const wrapper = mount(Search, {
-      store,
-      localVue
-    });
-    // const button = wrapper.find('button')
-    // await button.trigger('click')
-    await wrapper.find('#search').trigger("click");
-    await wrapper.vm.$nextTick();
-    expect(store.dispatch).toHaveBeenCalledWith("onSearchTag");
+  it('calls store action "getFeedsByTag" when button is clicked', () => {
+    const wrapper = shallowMount(Search, { store, localVue });
+    wrapper.find('button').trigger('click');
+    expect(actions.getFeedsByTag).toHaveBeenCalled();
   })
 })

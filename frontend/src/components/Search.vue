@@ -1,10 +1,10 @@
 <template>
   <div class="search">
     <div class="search--tag">
-      <form @submit.prevent="onSearchTag">
+      <form @submit.prevent="onSearchFeeds()">
         <label for=""></label>
         <input class="search--input" type="search" name="keyword" id="keyword" v-model="keyword" placeholder="Search feed by tag. . .">
-        <div class="button--controls" v-if="isValid">
+        <div class="button--controls" v-show="isValid">
           <button class="search--button" id="search" type="submit">Search By Tag</button>
         </div>
       </form>
@@ -28,12 +28,10 @@ export default {
       return this.keyword !== "";
     },
   },
-  // created() {
-  //   this.getFeeds();
-  // },
   methods: {
     ...mapActions(["getFeeds", "getFeedsByTag"]),
-    async onSearchTag() {
+    async onSearchFeeds() {
+      if (this.keyword === "") return;
       this.getFeedsByTag({ keyword: this.keyword });
     },
   },
