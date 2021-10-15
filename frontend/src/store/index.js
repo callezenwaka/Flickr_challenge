@@ -22,27 +22,21 @@ export default new Vuex.Store({
   actions: {
     async getFeeds(context) {
 			try {
-				// TODO: api call
+				// TODO: check store for data
         if (context.state.feeds && !!context.state.feeds.length) return context.state.feeds;
-        
+        // TODO: make api call
         const { data } = await feedApi.getFeeds();
-        console.log(data);
 				context.commit('GET_FEEDS', data);
 				return data;
 			} catch (error) {
-				await context.dispatch('setMessage', { text: error.message, status: false });
+				// await context.dispatch('setMessage', { text: error.message, status: false });
 				return;
 			}
 		},
 		async getFeedsByTag(context, payload) {
 			try {
-        // TODO: check vuex store for data
-        // const feeds = context.getters.getFeedBYTag(payload.keyword);
-        // if (feeds) return context.commit('GET_FEEDS', feeds);
-        console.log(payload.keyword)
-        // TODO: else make api call
+        // TODO: make api call
         const { data } = await feedApi.getFeedsByTag(payload.keyword);
-        console.log(data);
         context.commit('GET_FEEDS', data);
         return data;
       } catch (error) {

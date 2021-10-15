@@ -3,8 +3,23 @@
     <div class="feed--container">
       <div class="feed--list">
         <div class="feed--card" v-for="(feed, index) in feeds" :key="index">
-          <div><img :src="feed.media.m" :alt="feed.title" width="100px" height="auto"></div>
-          <div>{{feed.title}}</div>
+          <div>
+            <b-card
+              :title="feed.title"
+              :img-src="feed.media.m"
+              :img-alt="feed.title"
+              img-top
+              tag="article"
+              style="max-width: 20rem;"
+              class="mb-2"
+            >
+              <!-- <b-card-text>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </b-card-text> -->
+
+              <b-button :href="feed.link" variant="primary">&plus; Follow</b-button>
+            </b-card>
+          </div>
         </div>
       </div>
     </div>
@@ -16,9 +31,6 @@
 import { mapActions, mapGetters } from "vuex";
 export default {
   name: "Feeds",
-  props: {
-    msg: String,
-  },
   data() {
     return {};
   },
@@ -37,7 +49,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .feed--container {
-  padding: 0 12px;
+  padding: 12px 12px;
+  background-color: #ffffff;
 }
 .feed--list {
   display: -webkit-box;
@@ -54,14 +67,11 @@ export default {
   position: relative;
 }
 .feed--card {
-  background-color: #ffffff;
   position: relative;
   flex-direction: column;
   margin-bottom: 20px;
-  top: 0px;
-  left: 0px;
   width: 328px;
-  height: 182.222px;
+  /* height: 182.222px; */
 }
 /* mini screen */
 @media screen and (min-width: 730px) {

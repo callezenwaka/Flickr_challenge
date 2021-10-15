@@ -1,6 +1,6 @@
 import Vuex from 'vuex';
 import { createLocalVue, mount } from '@vue/test-utils';
-import Search from '@/components/Search.vue';
+import Search from '@/components/Search'
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
@@ -15,12 +15,14 @@ describe("Keyword Search", () => {
   afterEach(() => { });
 
   it("Trigger an action on button click", async () => {
-    const component = mount(Search, {
+    const wrapper = mount(Search, {
       store,
       localVue
     });
-    component.find("button").trigger("click");
-    await component.vm.$nextTick();
+    // const button = wrapper.find('button')
+    // await button.trigger('click')
+    await wrapper.find('#search').trigger("click");
+    await wrapper.vm.$nextTick();
     expect(store.dispatch).toHaveBeenCalledWith("onSearchTag");
   })
 })
