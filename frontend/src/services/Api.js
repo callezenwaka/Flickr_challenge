@@ -4,7 +4,7 @@
 import axios from 'axios'
 
 // export const API_URL = 'http://localhost:3000/api/fickr/';
-export const API_URL = 'https://flickr-challenge.herokuapp.com/api/fickr/';
+export const API_URL = 'https://flickr-challenge-api.herokuapp.com/api/fickr/';
 
 /** 
 * @param {String} url api url
