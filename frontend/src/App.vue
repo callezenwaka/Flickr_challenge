@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link class="" to="/">Buzz Challenge</router-link>
+      <router-link class="" to="/">Flickr Challenge</router-link>
       <!-- <router-link to="/about">About</router-link> -->
     </div>
     <router-view/>
