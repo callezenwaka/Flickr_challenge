@@ -1,2 +1,2 @@
-# buzz_challenge
-Buzz Solutions Coding challenge
+# Flickr_challenge
+Flickr Api Coding challenge
